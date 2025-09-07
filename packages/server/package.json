@@ -4,17 +4,23 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "start": "bun run index.ts",
-    "dev": "bun --watch run index.ts"
+    "start": "node index.js",
+    "dev": "bun --watch run index.ts",
+    "build": "bunx prisma generate && tsc",
+    "postinstall": "bunx prisma generate",
+    "migrate": "bunx prisma migrate deploy"
   },
   "devDependencies": {
     "@types/bun": "latest",
-    "@types/express": "^5.0.3"
+    "@types/express": "^5.0.3",
+    "prisma": "^6.15.0"
   },
   "peerDependencies": {
     "typescript": "^5"
   },
   "dependencies": {
+    "@prisma/client": "^6.15.0",
+    "dayjs": "^1.11.18",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
     "openai": "^5.15.0",

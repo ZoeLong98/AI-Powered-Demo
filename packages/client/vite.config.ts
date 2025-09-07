@@ -16,4 +16,10 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  // Production environment configuration
+  define: {
+    'process.env.VITE_API_URL': JSON.stringify(
+      process.env.VITE_API_URL || 'http://localhost:3000'
+    ),
+  },
 });
