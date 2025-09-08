@@ -5,15 +5,17 @@
   "private": true,
   "scripts": {
     "start": "node index.js",
-    "dev": "bun --watch run index.ts",
-    "build": "bunx prisma generate && tsc",
-    "postinstall": "bunx prisma generate",
-    "migrate": "bunx prisma migrate deploy"
+    "dev": "ts-node index.ts",
+    "build": "npx prisma generate && tsc",
+    "postinstall": "npx prisma generate",
+    "migrate": "npx prisma migrate deploy"
   },
   "devDependencies": {
     "@types/bun": "latest",
     "@types/express": "^5.0.3",
-    "prisma": "^6.15.0"
+    "prisma": "^6.15.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
   },
   "peerDependencies": {
     "typescript": "^5"

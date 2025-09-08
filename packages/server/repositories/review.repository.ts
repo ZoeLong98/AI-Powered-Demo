@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
-import { PrismaClient, type Review } from '../generated/prisma';
+import { type Review } from '../generated/prisma/client.js';
+import { PrismaClient } from '../generated/prisma/client.js';
 
 // PrismaClient gets regenerated every time we modify our Prisma schema and create a new migration
 const prisma = new PrismaClient();

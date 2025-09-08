@@ -3,7 +3,7 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "bun run start",
+    "startCommand": "npm run start",
     "healthcheckPath": "/",
     "healthcheckTimeout": 300
   }

@@ -1,11 +1,12 @@
-import { conversationRepository } from '../repositories/conversation.repository';
-import template from '../prompts/chatbot.txt';
+import { conversationRepository } from '../repositories/conversation.repository.ts';
 import fs from 'fs';
 import path from 'path';
-import { llmClient as client } from '../llm/client';
+import { llmClient as client } from '../llm/client.ts';
 
+const filePath = path.resolve('./prompts/chatbot.txt');
+const template = fs.readFileSync(filePath, 'utf-8');
 const parkInfo = fs
-  .readFileSync(path.join(__dirname, '..', 'prompts', 'WonderWorld.md'))
+  .readFileSync(path.join('.', 'prompts', 'WonderWorld.md'))
   .toString();
 const instructions = template.replace('{{parkInfo}}', parkInfo);
 
