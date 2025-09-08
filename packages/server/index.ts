@@ -11,6 +11,7 @@ app.use((req, res, next) => {
   const allowedOrigins = [
     'http://localhost:5173', // Vite dev server
     'http://localhost:3000', // Backup port
+    'https://client-olive-rho.vercel.app/',
     process.env.CLIENT_URL, // Production frontend URL
   ].filter(Boolean) as string[];
 
