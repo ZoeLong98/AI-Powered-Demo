@@ -5,10 +5,10 @@ FROM node:18
 WORKDIR /app
 
 # 复制 package.json 和 package-lock.json
-COPY packages/server/package*.json ./
+COPY package*.json ./
 
 # 复制 Prisma schema 文件
-COPY packages/server/prisma ./prisma
+COPY prisma ./prisma
 
 # 安装依赖时跳过 postinstall 脚本
 RUN npm install --ignore-scripts --legacy-peer-deps
@@ -17,7 +17,7 @@ RUN npm install --ignore-scripts --legacy-peer-deps
 RUN npx prisma generate --schema ./prisma/schema.prisma
 
 # 复制其余源代码
-COPY packages/server ./
+COPY . ./
 
 # 构建 TypeScript 项目
 RUN npm run build
