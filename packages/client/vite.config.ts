@@ -12,7 +12,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
     proxy: {
-      '/api': 'http://localhost:3000',
+      '/api': 'https://ai-powered-demo-production.up.railway.app',
     },
   },
   resolve: {

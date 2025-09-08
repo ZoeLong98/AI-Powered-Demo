@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaStar, FaRegStar } from 'react-icons/fa';
 
 type Props = {
