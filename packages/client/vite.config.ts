@@ -12,18 +12,16 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
     proxy: {
-      '/api': '',
+      '/api': {
+        target: process.env.VITE_API_URL || 'http://localhost:3000',
+        changeOrigin: true,
+        secure: false,
+      },
     },
   },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
-  },
-  // Production environment configuration
-  define: {
-    'process.env.VITE_API_URL': JSON.stringify(
-      process.env.VITE_API_URL || 'http://localhost:3000'
-    ),
   },
 });
