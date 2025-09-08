@@ -10,11 +10,6 @@ const __dirname = path.dirname(__filename);
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  server: {
-    proxy: {
-      '/api': 'https://ai-powered-demo-production.up.railway.app',
-    },
-  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
