@@ -1,8 +1,0 @@
-[start]
-cmd = "bun run start"
-
-[build]
-cmd = "bun install && bunx prisma generate"
-
-[variables]
-NODE_ENV = "production"
