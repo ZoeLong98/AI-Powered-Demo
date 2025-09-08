@@ -10,7 +10,7 @@ const Navbar = () => {
     <div className="absolute bottom-0 flex justify-around items-center w-full h-[70px] bg-white">
       <div
         className={`flex flex-col items-center cursor-pointer ${
-          location.pathname === '/reviews' ? 'text-pink-500' : 'text-gray-600'
+          location.pathname != '/chatbot' ? 'text-pink-500' : 'text-gray-600'
         }`}
         onClick={() => navigate('/reviews')}
       >
