@@ -1,7 +1,7 @@
 // API base URL configuration
 export const API_BASE_URL =
-  process.env.NODE_ENV === 'production'
-    ? process.env.VITE_API_URL || 'https://your-server-domain.railway.app'
+  import.meta.env.MODE === 'production'
+    ? import.meta.env.VITE_API_URL || 'https://your-server-domain.railway.app'
     : 'http://localhost:3000';
 
 export const API_ENDPOINTS = {
