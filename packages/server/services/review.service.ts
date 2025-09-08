@@ -1,8 +1,8 @@
 import type { Review } from '../generated/prisma/client.js';
-import { reviewRepository } from '../repositories/review.repository.ts';
-import { llmClient as client } from '../llm/client.ts';
-import fs from 'fs';
-import path from 'path';
+import { reviewRepository } from '../repositories/review.repository.js';
+import { llmClient as client } from '../llm/client.js';
+import * as fs from 'fs';
+import * as path from 'path';
 
 const filePath = path.resolve('./prompts/summarize-reviews.txt');
 const template = fs.readFileSync(filePath, 'utf-8');

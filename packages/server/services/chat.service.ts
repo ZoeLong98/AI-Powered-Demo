@@ -1,7 +1,7 @@
-import { conversationRepository } from '../repositories/conversation.repository.ts';
-import fs from 'fs';
-import path from 'path';
-import { llmClient as client } from '../llm/client.ts';
+import { conversationRepository } from '../repositories/conversation.repository.js';
+import * as fs from 'fs';
+import * as path from 'path';
+import { llmClient as client } from '../llm/client.js';
 
 const filePath = path.resolve('./prompts/chatbot.txt');
 const template = fs.readFileSync(filePath, 'utf-8');

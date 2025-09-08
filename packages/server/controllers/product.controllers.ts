@@ -1,5 +1,5 @@
 import type { Request, Response } from 'express';
-import { productRepository } from '../repositories/product.repository.ts';
+import { productRepository } from '../repositories/product.repository.js';
 
 export const productController = {
   async getProduct(req: Request, res: Response) {

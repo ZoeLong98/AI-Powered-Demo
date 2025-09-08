@@ -1,20 +1,21 @@
 {
   "name": "server",
   "module": "index.ts",
-  "type": "module",
   "private": true,
   "scripts": {
-    "start": "node index.js",
-    "dev": "ts-node index.ts",
-    "build": "npx prisma generate && tsc",
-    "postinstall": "npx prisma generate",
-    "migrate": "npx prisma migrate deploy"
+    "dev": "ts-node-dev --esm index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "prisma:generate": "prisma generate --schema ./prisma/schema.prisma",
+    "prisma:deploy": "prisma migrate deploy --schema ./prisma/schema.prisma"
   },
   "devDependencies": {
     "@types/bun": "latest",
     "@types/express": "^5.0.3",
+    "@types/node": "^20.0.0",
     "prisma": "^6.15.0",
     "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.9.2"
   },
   "peerDependencies": {

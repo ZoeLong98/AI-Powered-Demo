@@ -1,8 +1,8 @@
 import express from 'express';
 import type { Request, Response } from 'express';
-import { chatController } from './controllers/chat.controllers.ts';
-import { reviewController } from './controllers/review.controllers.ts';
-import { productController } from './controllers/product.controllers.ts';
+import { chatController } from './controllers/chat.controllers.js';
+import { reviewController } from './controllers/review.controllers.js';
+import { productController } from './controllers/product.controllers.js';
 
 const router = express.Router();
 
